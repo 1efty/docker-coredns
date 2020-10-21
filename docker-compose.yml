@@ -1,0 +1,16 @@
+---
+version: '3.5'
+
+services:
+  coredns:
+    image: coredns:docker-coredns
+    restart: unless-stopped
+    build:
+      context: coredns
+      args:
+        COREDNS_VERSION: $COREDNS_VERSION
+    ports:
+      - '53:53'
+      - '53:53/udp'
+    volumes:
+      - ./coredns/config:/etc/coredns
