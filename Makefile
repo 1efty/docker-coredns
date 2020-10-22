@@ -5,6 +5,9 @@
 up: ## Start coredns
 	docker-compose up -d --build
 
+bridged: ## Start coredns with bridged networking
+	@docker-compose -f docker-compose.yml -f docker-compose.bridged.yml up -d --build
+
 build: ## Build coredns
 	@docker-compose build
 
