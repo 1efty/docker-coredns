@@ -9,8 +9,8 @@ services:
       context: coredns
       args:
         COREDNS_VERSION: $COREDNS_VERSION
-    ports:
-      - '53:53'
-      - '53:53/udp'
+    expose:
+      - '53'
+      - '53/udp'
     volumes:
       - ./coredns/config:/etc/coredns

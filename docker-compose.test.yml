@@ -1,0 +1,11 @@
+---
+version: '3.5'
+
+services:
+  sut:
+    build: ./sut
+    command: bats /tests
+    depends_on:
+      - coredns
+    volumes:
+      - ./sut/tests:/tests
