@@ -1,5 +1,5 @@
 ---
-version: '3.5'
+version: "3.5"
 
 services:
   coredns:
@@ -10,7 +10,7 @@ services:
       args:
         COREDNS_VERSION: $COREDNS_VERSION
     expose:
-      - '53'
-      - '53/udp'
+      - "53"
+      - "53/udp"
     volumes:
       - ./coredns/config:/etc/coredns
